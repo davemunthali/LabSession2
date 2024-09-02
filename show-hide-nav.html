@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Test</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        display: flex;
+        color: #ffffff;
+        background-color: rgb(104, 21, 182);
+        justify-content: space-between;
+      }
+      .navbar {
+        display: flex;
+      }
+      .show {
+        display: block;
+      }
+      .navbar a {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 1.1rem 0.8rem;
+      }
+      a.nav-link:hover {
+        background-color: rgb(87, 8, 160);
+      }
+      a.toggle {
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+        padding: 1.1rem 0.8rem;
+        display: none;
+      }
+      /* Mobile devices (up to 600px) */
+      @media only screen and (max-width: 600px) {
+        /* Styles for mobile devices */
+        .navbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        a.nav-link {
+          display: none;
+          width: 100vw;
+          border-top: 1px solid rgb(66, 3, 124);
+        }
+        a.toggle {
+          display: block;
+        }
+      }
+
+      /* Tablets (601px to 1024px) */
+      @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        /* Styles for tablets */
+      }
+
+      /* Desktops (1025px and above) */
+      @media only screen and (min-width: 1025px) {
+        /* Styles for desktops */
+      }
+      .section {
+        background-color: rgb(235, 226, 244);
+        text-align: center;
+        padding: 1rem;
+        min-height: 50vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-wrap: wrap;
+        
+      }
+      .section h1 {
+        font-size: 2.8rem;
+        margin-top: 3rem;
+        font-weight: 300;
+      }
+      .section p{
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <a href="#" class="brand">companyX</a>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="toggle" id="toggle-btn"
+          ><i class="fa fa-navicon"></i
+        ></a>
+      </div>
+    </nav>
+    <div class="section">
+      <h1>Welcome to companyX shop</h1>
+      <p>Shopping has been made easy! order Items and pay on delivery!</p>
+    </div>
+    <script>
+      const toggle = document.getElementById("toggle-btn");
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        // get all navlinks
+        const links = document.getElementsByClassName("nav-link");
+        for (let link of links) {
+          link.style.display = link.style.display == "block" ? "none" : "block";
+        }
+      });
+    </script>
+  </body>
+</html>

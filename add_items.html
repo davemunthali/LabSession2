@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      background-color: rgb(245, 250, 255);
+    }
+    .fake-navbar {
+      background-color: rgb(50, 66, 189);
+      height: 3rem;
+    }
+    .container {
+      margin: 2rem 10rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .btn {
+      padding: 0.5rem;
+      border-radius: 5px;
+      color: #ffffff;
+      border: 0;
+      background-color: rgb(50, 66, 189);
+    }
+    input {
+      margin: 0.5rem 0;
+      padding: 0.4rem;
+      border: 2px solid rgb(50, 66, 189);
+      border-radius: 5px;
+      width: 20vw;
+    }
+    .text {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 0.9rem 0.5rem;
+      margin-top: 0.9rem;
+    }
+  </style>
+  <body>
+    <div class="fake-navbar"></div>
+    <div class="container">
+      <div class="content" id="content">
+        <p class="text">Hello world, this is a useless p with some content</p>
+      </div>
+      <input type="text" id="input" />
+      <div>
+        <button class="btn" id="btn">Add content</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", () => {
+        const text = document.getElementById("input").value;
+        const p = document.createElement("p");
+        p.innerText = text;
+        p.classList.add("text");
+        document.getElementById("content").appendChild(p);
+      });
+    </script>
+  </body>
+</html>

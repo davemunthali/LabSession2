@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      background-color: rgb(245, 250, 255);
+    }
+    .fake-navbar {
+      background-color: rgb(50, 66, 189);
+      height: 3rem;
+    }
+    .container {
+      margin: 2rem 10rem;
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .slider {
+      position: relative;
+      width: 50vw;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    #back{
+        color: #ffffff;
+        font-size: 2rem;
+        position: absolute;
+        left: 0;
+        top: 200px;
+    }
+    #next{
+        color: #ffffff;
+        font-size: 2rem;
+        position: absolute;
+        right: 0;
+        top: 200px;
+    }
+    .c-container{
+        position: absolute;
+        right: 300px;
+        bottom: 30px;
+    }
+    #one{
+        color: #ffffff;
+    }
+  </style>
+  <body>
+    <div class="fake-navbar"></div>
+    <div class="container">
+      <div class="slider">
+        <img src="./images/1.jpg" id="slide" alt="" />
+        <a id="back" href=""><i class="fa fa-arrow-left"></i></a>
+        <a id="next" href=""><i class="fa fa-arrow-right"></i></a>
+        <div class="c-container">
+            <a id="one" href=""><i class="fa fa-circle"></i></a>
+            <a id="one" href=""><i class="fa fa-circle"></i></a>
+            <a id="one" href=""><i class="fa fa-circle"></i></a>
+            <a id="one" href=""><i class="fa fa-circle"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      setInterval(() => {
+        const slide = document.getElementById("slide");
+        const random_number = Math.floor(Math.random() * 4);
+        const img_array = ["./images/1.jpg", "./images/2.jpg", "./images/3.jpg", "./images/4.jpg"];
+        console.log(random_number);
+        slide.setAttribute("src", img_array[random_number]);
+      }, 2000);
+    </script>
+  </body>
+</html>

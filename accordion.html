@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      background-color: rgb(245, 250, 255);
+    }
+    .fake-navbar {
+      background-color: rgb(50, 66, 189);
+      height: 3rem;
+    }
+    .container {
+      margin: 2rem 10rem;
+    }
+    .accordion {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      padding: 0.5rem 1.2rem;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .acc-layout {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+    #toggle {
+      text-decoration: none;
+    }
+    .acc-content {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="fake-navbar"></div>
+    <div class="container">
+      <div class="accordion">
+        <div class="acc-layout">
+          <div class="title">How to prepare Nsima</div>
+          <div>
+            <a id="toggle" href=""><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div id="acc-content" class="acc-content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+            voluptas nihil aperiam, reprehenderit eos deleniti mollitia facilis
+            adipisci minus cum deserunt quam, quidem commodi ratione ab soluta
+            magnam? Aliquid, libero.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis earum et veritatis aliquam nulla, assumenda alias architecto laboriosam doloremque illo natus esse eligendi recusandae perspiciatis itaque explicabo, nemo deleniti vitae.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const link = document.getElementById("toggle");
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const content = document.getElementById("acc-content");
+        content.classList.toggle("acc-content");
+      });
+    </script>
+  </body>
+</html>
