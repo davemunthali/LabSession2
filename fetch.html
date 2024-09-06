@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      fetch("http://localhost:3000/jan_data")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return new Error("Failed to fetch the data");
+          }
+        })
+        .then((data) => {
+          for (const o of data) {
+            let p = document.createElement("p");
+            p.innerText = `id: ${o.id} temp: ${o.temp}`;
+
+            const div = document.getElementById("container");
+            div.appendChild(p);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

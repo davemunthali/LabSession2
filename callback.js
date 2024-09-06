@@ -23,9 +23,28 @@ function fetchData(callback) {
   }, 5000);
 }
 
-fetchData((data) => {
-  console.log(data);
-});
-for (let i = 0; i < 10; i++) {
-  console.log("Executing the loop code");
+// fetchData((data) => {
+//   console.log(data);
+// });
+// for (let i = 0; i < 10; i++) {
+//   console.log("Executing the loop code");
+// }
+
+function fetchData2(url) {
+  // operation- getting data from the url
+  const result = null;
+  return new Promise((resolve, reject) => {
+    if (result) {
+      resolve(result);
+    } else {
+      reject(new Error("Failed to get data"));
+    }
+  });
 }
+fetchData2("http://data.com/products")
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
